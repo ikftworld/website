@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+}
+
+/* small utilities */
+.gradient-hero {
+  background: linear-gradient(90deg, rgba(126,90,255,0.08), rgba(11,108,246,0.04));
+}
+.card-shadow { box-shadow: 0 8px 30px rgba(16,24,40,0.06); }
+
