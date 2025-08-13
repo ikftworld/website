@@ -31,7 +31,7 @@ function Header({ dark, setDark }){
     <header className="py-6 px-6 md:px-12 flex items-center justify-between">
       <div className="flex items-center gap-3">
         <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold">AG</div>
-        <span className="font-semibold">Agentic</span>
+        <span className="font-semibold">by IKFT</span>
       </div>
       <nav className="hidden md:flex gap-6 items-center text-sm">
         <a href="#product" className="hover:underline">Product</a>
@@ -41,7 +41,9 @@ function Header({ dark, setDark }){
         <button onClick={() => setDark(!dark)} className="ml-4 px-3 py-2 rounded-md border text-sm">
           {dark ? '☀ Light' : '🌙 Dark'}
         </button>
-        <button className="ml-3 px-4 py-2 rounded-md text-white bg-primary">Get started</button>
+        <a href="https://docs.ikft.world" target="_blank">
+          <button className="ml-3 px-4 py-2 rounded-md text-white bg-primary">Get started</button>
+        </a>
       </nav>
     </header>
   )
@@ -53,7 +55,7 @@ function Hero(){
       <div className="max-w-6xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <div>
           <p className="inline-block text-sm bg-indigo-50 text-indigo-600 px-3 py-1 rounded-full mb-4">Beta • Programmable Money</p>
-          <h1 className="text-3xl md:text-5xl font-extrabold leading-tight">Agentic — API-first infrastructure for agentic fintech</h1>
+          <h1 className="text-3xl md:text-5xl font-extrabold leading-tight">IKFT — API-first infrastructure for agentic fintech</h1>
           <p className="mt-6 text-lg text-slate-700 max-w-xl">Build cards, ledgers, reconciliation, and programmable money flows with a single API. Scales from pilots to global production.</p>
 
           <div className="mt-8 flex flex-wrap gap-3">
@@ -183,7 +185,7 @@ function CTABand(){
           <p className="mt-2 text-slate-600">Start with a sandbox, integrate your rails, and go live with PCI-scoped options.</p>
         </div>
         <div className="mt-6 md:mt-0">
-          <a className="inline-flex items-center gap-2 px-5 py-3 rounded-md bg-primary text-white font-medium" href="#get-started">Get started</a>
+          <a className="inline-flex items-center gap-2 px-5 py-3 rounded-md bg-primary text-weite font-medium" href="https://docs.ikft.world" target="_blank">Get started</a>
         </div>
       </div>
     </section>
