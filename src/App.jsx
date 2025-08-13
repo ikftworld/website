@@ -162,7 +162,6 @@ function UseCases() {
   const cases = [
     {title: 'Legacy integration', desc: 'Easily add Agentic functionality to your legacy stack.'},
     {title: 'Launch agentic Neobank', desc: 'Launch a fully agentic FinTech platform in weeks.'},
-    {title: 'Marketplaces & payouts', desc: 'Split payments, delayed payouts, and granular ledger tracking.'},
     {title: 'Embedded banking', desc: 'Branded accounts, KYC flows, and programmable transfers.'},
   ]
   return (
