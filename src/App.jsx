@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Cpu, CreditCard, Layers, ShieldCheck, Plug, PlugZap } from 'lucide-react'
 
 export default function App() {
   const [dark, setDark] = useState(false)
@@ -12,13 +13,14 @@ export default function App() {
   }, [dark])
 
   return (
-    <div className={`font-sans min-h-screen ${dark ? 'bg-slate-900 text-white' : 'bg-white text-slate-900'}`}>
+    <div className={`font-sans min-h-screen ${dark ? 'bg-slate-900 text-slate-300' : 'bg-white text-slate-900'}`}>
       <Header dark={dark} setDark={setDark} />
       <main>
         <Hero />
         <Trusted />
         <Features />
         <UseCases />
+        <Company />
         <CTABand />
       </main>
       <Footer />
@@ -35,9 +37,8 @@ function Header({ dark, setDark }){
       </div>
       <nav className="hidden md:flex gap-6 items-center text-sm">
         <a href="#product" className="hover:underline">Product</a>
-        <a href="#pricing" className="hover:underline">Pricing</a>
+        <a href="#company" className="hover:underline">Company</a>
         <a href="https://docs.ikft.world" className="hover:underline" target="_blank">Docs</a>
-        <a href="https://ikft.world" className="hover:underline">Company</a>
         <button onClick={() => setDark(!dark)} className="ml-4 px-3 py-2 rounded-md border text-sm">
           {dark ? '☀ Light' : '🌙 Dark'}
         </button>
@@ -57,6 +58,7 @@ function Hero(){
           <p className="inline-block text-sm bg-indigo-50 text-indigo-600 px-3 py-1 rounded-full mb-4">Beta • Programmable Money</p>
           <h1 className="text-3xl md:text-5xl font-extrabold leading-tight">IKFT — API-first infrastructure for agentic fintech</h1>
           <p className="mt-6 text-lg text-slate-700 max-w-xl">Build cards, ledgers, reconciliation, and programmable money flows with a single API. Scales from pilots to global production.</p>
+          <p className="mt-6 text-lg text-slate-700 max-w-xl">Use IKFT stack with agentic features built in or make your stack AI powered by connecting to Agentic platform.</p>
 
           <div className="mt-8 flex flex-wrap gap-3">
             <a className="inline-flex items-center gap-2 px-5 py-3 rounded-md bg-primary text-white font-medium" href="#get-started">Get started — it's free</a>
@@ -126,23 +128,28 @@ function Logo({name}){
 
 function Features(){
   const items = [
-    {title: 'Cards & Issuance', desc: 'Virtual and physical card issuance with metadata and controls.'},
-    {title: 'Programmable Ledgers', desc: 'Multi-ledger support, double-entry primitives, and reconciliation.'},
-    {title: 'Compliance & Risk', desc: 'Built-in AML hooks, webhooks for alerts, and risk scoring.'},
-    {title: 'Integrations', desc: 'Accounting, payroll, and payment rails via modular connectors.'},
+    {icon: <Cpu className="w-5 h-5 text-primary"/>, title: 'Agentic Core', desc: 'A fully Agentic financial platform.'},
+    {icon: <Plug className="w-5 h-5 text-primary"/>, title: 'Agentic Connect', desc: 'Extend your legacy platform with Agentic functionality. Fully customizable to your needs.'},
+    {icon: <CreditCard className="w-5 h-5 text-primary"/>, title: 'Cards & Issuance', desc: 'Virtual and physical card issuance with metadata and controls.'},
+    {icon: <Layers className="w-5 h-5 text-primary"/>, title: 'Programmable Ledgers', desc: 'Multi-ledger support, double-entry primitives, and reconciliation.'},
+    {icon: <ShieldCheck className="w-5 h-5 text-primary"/>, title: 'Compliance & Risk', desc: 'Built-in AML hooks, webhooks for alerts, and risk scoring.'},
+    {icon: <PlugZap className="w-5 h-5 text-primary"/>, title: 'Integrations', desc: 'Accounting, payroll, and payment rails via modular connectors.'},
   ]
 
   return (
     <section id="product" className="py-16">
       <div className="max-w-6xl mx-auto px-6 md:px-12">
         <h2 className="text-2xl font-bold">Complete platform primitives</h2>
-        <p className="mt-3 text-slate-600 max-w-2xl">Everything you need to build financial products: from card controls to full reconciliation and programmable money flows.</p>
+        <p className="mt-3 text-slate-600 dark:text-slate-300 max-w-2xl">Everything you need to build financial products: from card controls to full reconciliation and programmable money flows.</p>
 
         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
           {items.map((it) => (
-            <div key={it.title} className="p-6 border rounded-lg">
-              <h3 className="font-semibold">{it.title}</h3>
-              <p className="mt-2 text-slate-600 text-sm">{it.desc}</p>
+            <div key={it.title} className="p-6 border rounded-lg flex gap-4 items-start">
+              {it.icon}
+              <div>
+                <h3 className="font-semibold">{it.title}</h3>
+                <p className="mt-2 text-slate-600 dark:text-slate-300 text-sm">{it.desc}</p>
+              </div>
             </div>
           ))}
         </div>
@@ -151,9 +158,10 @@ function Features(){
   )
 }
 
-function UseCases(){
+function UseCases() {
   const cases = [
-    {title: 'Expense cards for remote teams', desc: 'Instant cards with rules and real-time spending visibility.'},
+    {title: 'Legacy integration', desc: 'Easily add Agentic functionality to your legacy stack.'},
+    {title: 'Launch agentic Neobank', desc: 'Launch a fully agentic FinTech platform in weeks.'},
     {title: 'Marketplaces & payouts', desc: 'Split payments, delayed payouts, and granular ledger tracking.'},
     {title: 'Embedded banking', desc: 'Branded accounts, KYC flows, and programmable transfers.'},
   ]
@@ -167,10 +175,29 @@ function UseCases(){
               <div className="text-sm text-slate-500">Use case</div>
               <div className="mt-2 font-semibold">{c.title}</div>
               <p className="mt-2 text-slate-600 text-sm">{c.desc}</p>
-              <div className="mt-4 text-sm"><a className="text-primary hover:underline" href="#">Learn how →</a></div>
+            {/* <div className="mt-4 text-sm"><a className="text-primary hover:underline" href="#">Learn how →</a></div> */}
             </div>
           ))}
         </div>
+      </div>
+    </section>
+  )
+}
+
+function Company() {
+  return (
+    <section id="company" className="py-16">
+      <div className="max-w-6xl mx-auto px-6 md:px-12">
+        <h2 className="text-2xl font-bold">About Agentic</h2>
+        <p className="mt-4 text-slate-600 max-w-3xl">
+          Agentic was founded by a team with deep expertise in building and scaling Banking-as-a-Service (BaaS) products.
+          Our founders have led product and engineering teams at industry-leading platforms, including those behind
+          <a href="https://mbanq.com/nebula" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline"> Mbanq Nebula</a> — a full-stack, cloud-native BaaS solution that powers fintech innovation around the world.
+        </p>
+        <p className="mt-4 text-slate-600 max-w-3xl">
+          With experience launching compliant, global-ready infrastructure for cards, payments, and ledgers, our team is uniquely positioned to help
+          fintech builders go from idea to production faster, while maintaining bank-grade security and compliance.
+        </p>
       </div>
     </section>
   )
