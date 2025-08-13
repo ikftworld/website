@@ -12,3 +12,13 @@ html, body, #root {
 }
 .card-shadow { box-shadow: 0 8px 30px rgba(16,24,40,0.06); }
 
+.privacy-policy {
+  ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+  }
+  ol {
+    list-style-type: decimal;
+    margin-left: 1.5rem;
+  }
+}
