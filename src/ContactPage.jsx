@@ -1,9 +1,20 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import { Mail } from 'lucide-react'
+import emailjs from '@emailjs/browser'
 
 export default function ContactPage() {
+  const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
+  const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+  const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
   const [status, setStatus] = useState('')
+
+  emailjs.init({
+    publicKey,
+  });
 
   const handleChange = e => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -14,33 +25,15 @@ export default function ContactPage() {
     setStatus('Sending...')
 
     try {
-      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
-      // const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID
-      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-
-      const payload = {
-        service_id: serviceId,
-        // template_id: templateId,
-        user_id: publicKey,
-        template_params: {
-          from_name: formData.name,
-          reply_to: formData.email,
-          message: formData.message,
-        }
+      const templateParams = {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+        from_name: formData.name,
+        reply_to: formData.email,
       }
-
-      const res = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      })
-
-      if (res.ok) {
-        setStatus('Message sent successfully!')
-        setFormData({ name: '', email: '', message: '' })
-      } else {
-        setStatus('Failed to send message. Please try again later.')
-      }
+      await emailjs.send(serviceId, templateId, templateParams)
+      navigate('/')
     } catch (err) {
       console.error(err)
       setStatus('Error sending message.')

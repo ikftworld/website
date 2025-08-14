@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 import { Cpu, CreditCard, Layers, ShieldCheck, Plug, PlugZap } from 'lucide-react'
 import PrivacyOverlay from './PrivacyOverlay'
-// import ContactPage from './ContactPage'
 
 export default function App() {
   const [dark, setDark] = useState(false)
@@ -43,6 +43,7 @@ function Header({ dark, setDark }){
         <a href="#product" className="hover:underline">Product</a>
         <a href="#company" className="hover:underline">Company</a>
         <a href="https://docs.ikft.world" className="hover:underline" target="_blank">Docs</a>
+        <Link to="/contact" className="hover:underline">Contact</Link>
         <button onClick={() => setDark(!dark)} className="ml-4 px-3 py-2 rounded-md border text-sm">
           {dark ? '☀ Light' : '🌙 Dark'}
         </button>
