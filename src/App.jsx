@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Cpu, CreditCard, Layers, ShieldCheck, Plug, PlugZap } from 'lucide-react'
+import PrivacyOverlay from './PrivacyOverlay'
+// import ContactPage from './ContactPage'
 
 export default function App() {
   const [dark, setDark] = useState(false)
@@ -18,10 +20,10 @@ export default function App() {
       <Header dark={dark} setDark={setDark} />
       <main>
         <Hero />
-        <Trusted />
         <Features />
         <UseCases />
         <Company />
+        {/* <ContactPage /> */}
         <CTABand />
       </main>
       <Footer onShowPrivacy={() => setShowPrivacy(true)} />
@@ -106,6 +108,29 @@ function Hero(){
   )
 }
 
+{/*
+function Trusted(){
+  const logos = [
+    { src: '/logos/company1.svg', alt: 'Company 1' },
+    { src: '/logos/company2.svg', alt: 'Company 2' },
+    { src: '/logos/company3.svg', alt: 'Company 3' },
+    { src: '/logos/company4.svg', alt: 'Company 4' }
+  ]
+
+  return (
+    <section className="py-12 border-t border-b">
+      <div className="max-w-6xl mx-auto px-6 md:px-12 text-center">
+        <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wide">Trusted by leading fintech innovators</h3>
+        <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-6 items-center">
+          {logos.map((logo) => (
+            <img key={logo.alt} src={logo.src} alt={logo.alt} className="h-10 mx-auto" />
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function Trusted(){
   return (
     <section className="py-8">
@@ -127,6 +152,7 @@ function Logo({name}){
     <div className="text-xs text-slate-600 bg-slate-50 px-4 py-2 rounded-md">{name}</div>
   )
 }
+*/}
 
 function Features(){
   const items = [
@@ -189,11 +215,10 @@ function Company() {
   return (
     <section id="company" className="py-16">
       <div className="max-w-6xl mx-auto px-6 md:px-12">
-        <h2 className="text-2xl font-bold">About Agentic</h2>
+        <h2 className="text-2xl font-bold">About IKFT</h2>
         <p className="mt-4 text-slate-600 max-w-3xl">
-          Agentic was founded by a team with deep expertise in building and scaling Banking-as-a-Service (BaaS) products.
-          Our founders have led product and engineering teams at industry-leading platforms, including those behind
-          <a href="https://mbanq.com/nebula" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline"> Mbanq Nebula</a> — a full-stack, cloud-native BaaS solution that powers fintech innovation around the world.
+          IKFT was founded by a team with deep expertise in building and scaling Banking-as-a-Service (BaaS) products.
+          Our founders have led product and engineering teams at industry-leading platforms.
         </p>
         <p className="mt-4 text-slate-600 max-w-3xl">
           With experience launching compliant, global-ready infrastructure for cards, payments, and ledgers, our team is uniquely positioned to help
@@ -224,7 +249,7 @@ function Footer({ onShowPrivacy }) {
   return (
     <footer className="mt-12 border-t py-8">
       <div className="max-w-6xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
-        <div className="text-sm text-slate-600">© {new Date().getFullYear()} Agentic — All rights reserved</div>
+        <div className="text-sm text-slate-600">© {new Date().getFullYear()} IKFT — All rights reserved</div>
         <div className="flex gap-4 text-sm">
           <button onClick={onShowPrivacy} className="hover:underline">Privacy</button>
           {/* <a href="#terms" className="hover:underline">Terms</a> */}
@@ -232,81 +257,5 @@ function Footer({ onShowPrivacy }) {
         </div>
       </div>
     </footer>
-  )
-}
-
-function PrivacyOverlay({ onClose }) {
-  return (
-    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 privacy-policy">
-      <div className="bg-white dark:bg-slate-800 rounded-lg max-w-2xl w-full p-6 relative">
-        <button onClick={onClose} className="absolute top-4 right-4 text-slate-500 hover:text-slate-800 dark:hover:text-white">✕</button>
-        <h2 className="text-xl font-bold mb-4 text-slate-300">Privacy Policy</h2>
-        <div className="text-sm text-slate-300 space-y-3 max-h-[70vh] overflow-y-auto">
-          <p><strong>Effective Date:</strong> August 13, 2025</p>
-
-          <p>ikft (“we,” “our,” or “us”) respects your privacy and is committed to protecting the personal information you share with us. This Privacy Policy explains what information we collect, how we use it, and the rights you have regarding your data.</p>
-
-          <section>
-            <h2>1. Information We Collect</h2>
-            <p>We collect the email address you provide when you:</p>
-            <ul>
-              <li>Subscribe to our communications</li>
-              <li>Sign up for updates or offers</li>
-              <li>Contact us directly</li>
-            </ul>
-            <p>We do not collect any other personal information unless you choose to provide it.</p>
-          </section>
-
-          <section>
-            <h2>2. How We Use Your Information</h2>
-            <p>We use your email address to:</p>
-            <ul>
-              <li>Send you marketing communications and promotional offers</li>
-              <li>Share news, updates, and information about our products and services</li>
-              <li>Respond to your inquiries or feedback</li>
-            </ul>
-            <p>You can opt out of marketing communications at any time by following the unsubscribe link in our emails or by contacting us directly.</p>
-          </section>
-
-          <section>
-            <h2>3. Data Sharing and Disclosure</h2>
-            <p>We do <strong>not</strong> sell, rent, or share your personal information with third parties. Your data remains within ikft and is only accessible to authorized team members who need it for the purposes described in this policy.</p>
-          </section>
-
-          <section>
-            <h2>4. International Use</h2>
-            <p>We operate globally. By providing your information, you understand that it may be processed and stored in countries where privacy laws may differ from those in your location. Regardless of where your data is stored, we take reasonable measures to protect it.</p>
-          </section>
-
-          <section>
-            <h2>5. Data Security</h2>
-            <p>We implement appropriate technical and organizational measures to safeguard your information against unauthorized access, loss, misuse, or alteration. However, no method of transmission or storage is 100% secure.</p>
-          </section>
-
-          <section>
-            <h2>6. Your Rights</h2>
-            <p>Depending on your location, you may have the right to:</p>
-            <ul>
-              <li>Access the personal information we hold about you</li>
-              <li>Request corrections or updates to your data</li>
-              <li>Ask us to delete your personal information</li>
-              <li>Withdraw your consent to receive marketing communications</li>
-            </ul>
-            <p>To exercise these rights, contact us at <a href="mailto:privacy@ikft.world">privacy@ikft.world</a>.</p>
-          </section>
-
-          <section>
-            <h2>7. Changes to This Policy</h2>
-            <p>We may update this Privacy Policy from time to time. When we do, we will revise the “Effective Date” at the top. Significant changes will be communicated through our website or by email.</p>
-          </section>
-
-          <section>
-            <h2>8. Contact Us</h2>
-            <p>For any questions or concerns about this Privacy Policy or our practices, you can reach us at:</p>
-            <p><strong>Email:</strong> <a href="mailto:privacy@ikft.world">privacy@ikft.world</a></p>
-          </section>
-        </div>
-      </div>
-    </div>
   )
 }
