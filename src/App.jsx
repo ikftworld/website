@@ -254,7 +254,7 @@ function Footer({ onShowPrivacy }) {
         <div className="flex gap-4 text-sm">
           <button onClick={onShowPrivacy} className="hover:underline">Privacy</button>
           {/* <a href="#terms" className="hover:underline">Terms</a> */}
-          <a href="mailto:agentic@ikft.world" className="hover:underline">Contact</a>
+          <Link to="/contact" className="hover:underline">Contact</Link>
         </div>
       </div>
     </footer>
