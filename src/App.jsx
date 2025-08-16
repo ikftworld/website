@@ -170,7 +170,7 @@ function Features(){
     <section id="product" className="py-16">
       <div className="max-w-6xl mx-auto px-6 md:px-12">
         <h2 className="text-2xl font-bold">Complete platform primitives</h2>
-        <p className="mt-3 text-slate-600 dark:text-slate-300 max-w-2xl">Everything you need to build financial products: from card controls to full reconciliation and programmable money flows.</p>
+        <p className="mt-3 text-slate-600 dark:text-slate-600 max-w-2xl">Everything you need to build financial products: from card controls to full reconciliation and programmable money flows.</p>
 
         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
           {items.map((it) => (
@@ -178,7 +178,7 @@ function Features(){
               {it.icon}
               <div>
                 <h3 className="font-semibold">{it.title}</h3>
-                <p className="mt-2 text-slate-600 dark:text-slate-300 text-sm">{it.desc}</p>
+                <p className="mt-2 text-slate-600 dark:text-slate-500 text-sm">{it.desc}</p>
               </div>
             </div>
           ))}

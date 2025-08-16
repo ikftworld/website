@@ -1,0 +1,6 @@
+# Allow all crawlers
+User-agent: *
+Disallow:
+
+# Sitemap (optional, if you have one)
+Sitemap: https://www.ikft.world/sitemap.xml
