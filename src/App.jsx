@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import { Cpu, CreditCard, Layers, ShieldCheck, Plug, PlugZap } from 'lucide-react'
+import ScrollButton from './components/ScrollButton'
 import PrivacyOverlay from './PrivacyOverlay'
 
 export default function App() {
@@ -40,8 +41,8 @@ function Header({ dark, setDark }){
         <span className="font-semibold">by IKFT</span>
       </div>
       <nav className="hidden md:flex gap-6 items-center text-sm">
-        <a href="#product" className="hover:underline">Product</a>
-        <a href="#company" className="hover:underline">Company</a>
+        <ScrollButton targetId="product">Product</ScrollButton>
+        <ScrollButton targetId="company">Company</ScrollButton>
         <a href="https://docs.ikft.world" className="hover:underline" target="_blank">Docs</a>
         <Link to="/contact" className="hover:underline">Contact</Link>
         <button onClick={() => setDark(!dark)} className="ml-4 px-3 py-2 rounded-md border text-sm">
