@@ -7,7 +7,7 @@ export default defineConfig({
     react(),
     sitemap({
       hostname: 'https://www.ikft.world',
-      routes: ['/','/#/contact']
+      routes: ['/','/#/contact', '/#/investors']
     })
   ]
 })

@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom/client'
 import { HashRouter  as Router, Routes, Route } from 'react-router-dom'
 import App from './App'
 import ContactPage from './ContactPage'
-import './index.css'
+import InvestorsPage from './InvestorsPage'
+import './styles/index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -11,6 +12,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/investors" element={<InvestorsPage />} />
       </Routes>
     </Router>
   </React.StrictMode>

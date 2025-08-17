@@ -24,7 +24,6 @@ export default function App() {
         <Features />
         <UseCases />
         <Company />
-        {/* <ContactPage /> */}
         <CTABand />
       </main>
       <Footer onShowPrivacy={() => setShowPrivacy(true)} />
