@@ -4,7 +4,6 @@ import { Mail } from 'lucide-react'
 import emailjs from '@emailjs/browser'
 
 export default function ContactPage() {
-  console.log(`import.meta.env: ${JSON.stringify(import.meta.env, null, 2)}`)
   const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
   const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
   const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY

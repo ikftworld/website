@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import { Cpu, CreditCard, Layers, ShieldCheck, Plug, PlugZap } from 'lucide-react'
-import ScrollButton from './components/ScrollButton'
 import PrivacyOverlay from './PrivacyOverlay'
+import Header from './components/Header'
 
 export default function App() {
   const [dark, setDark] = useState(false)
@@ -30,29 +30,6 @@ export default function App() {
       <Footer onShowPrivacy={() => setShowPrivacy(true)} />
       {showPrivacy && <PrivacyOverlay onClose={() => setShowPrivacy(false)} />}
     </div>
-  )
-}
-
-function Header({ dark, setDark }){
-  return (
-    <header className="py-6 px-6 md:px-12 flex items-center justify-between">
-      <div className="flex items-center gap-3">
-        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold">AG</div>
-        <span className="font-semibold">by IKFT</span>
-      </div>
-      <nav className="hidden md:flex gap-6 items-center text-sm">
-        <ScrollButton targetId="product">Product</ScrollButton>
-        <ScrollButton targetId="company">Company</ScrollButton>
-        <a href="https://docs.ikft.world" className="hover:underline" target="_blank">Docs</a>
-        <Link to="/contact" className="hover:underline">Contact</Link>
-        <button onClick={() => setDark(!dark)} className="ml-4 px-3 py-2 rounded-md border text-sm">
-          {dark ? '☀ Light' : '🌙 Dark'}
-        </button>
-        <a href="https://docs.ikft.world" target="_blank">
-          <button className="ml-3 px-4 py-2 rounded-md text-white bg-primary">Get started</button>
-        </a>
-      </nav>
-    </header>
   )
 }
 
