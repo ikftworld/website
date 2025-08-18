@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Cpu, CreditCard, Layers, ShieldCheck, Plug, PlugZap } from 'lucide-react'
 import PrivacyOverlay from './PrivacyOverlay'
 import Header from './components/Header'
+import ConsentBanner from './components/ConsentBanner'
 
 export default function App() {
   const [dark, setDark] = useState(false)
@@ -25,6 +26,7 @@ export default function App() {
         <UseCases />
         <Company />
         <CTABand />
+        <ConsentBanner />
       </main>
       <Footer onShowPrivacy={() => setShowPrivacy(true)} />
       {showPrivacy && <PrivacyOverlay onClose={() => setShowPrivacy(false)} />}
