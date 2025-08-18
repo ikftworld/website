@@ -26,8 +26,8 @@ export default function App() {
         <UseCases />
         <Company />
         <CTABand />
-        <ConsentBanner />
       </main>
+      <ConsentBanner />
       <Footer onShowPrivacy={() => setShowPrivacy(true)} />
       {showPrivacy && <PrivacyOverlay onClose={() => setShowPrivacy(false)} />}
     </div>

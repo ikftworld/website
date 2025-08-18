@@ -8,7 +8,7 @@ import InvestorsPage from './InvestorsPage'
 import './styles/index.css'
 
 const tagManagerArgs = {
-  gtmId: 'G-PDMD7RMPEL',
+  gtmId: 'GTM-N57V9H33',
 };
 
 TagManager.initialize(tagManagerArgs);
