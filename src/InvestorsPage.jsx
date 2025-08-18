@@ -1,5 +1,6 @@
 import React from 'react'
 import { CartesianGrid, Legend, PieChart, Pie, Cell, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip } from 'recharts'
+import ContactPage from './ContactPage'
 
 const marketData = [
   { name: 'BaaS Market 2023', value: 20 },
@@ -14,12 +15,6 @@ const aiAdoptionData = [
 ]
 
 const COLORS = ['#0b6cf6', '#7e5aff']
-
-const banksData = [
-  { geography: 'US', banks: 4462 },
-  { geography: 'Europe', banks: 4927 },
-  { geography: 'Worldwide', banks: 25000 },
-]
 
 const AIBankingChart = () => {
   const data = [
@@ -73,72 +68,77 @@ const ProjectedRevenueChart = () => {
 
 export default function InvestorsPage() {
   return (
-    <section className="py-16 px-6 md:px-12 max-w-6xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6">Investor Overview</h1>
-      <p className="text-lg text-slate-600 dark:text-slate-300 max-w-3xl mb-8">
-        IKFT is building the world’s first agentic Banking-as-a-Service platform, where AI-driven infrastructure can
-        make any bank programmable and adaptive. The market is massive — global BaaS revenues are projected to grow
-        4x+ this decade — and AI adoption in finance is accelerating.
-      </p>
-
-      <div className="grid md:grid-cols-2 gap-12 mb-8">
-        <div>
-          <h2 className="font-semibold mb-4">BaaS Market Growth</h2>
-          <ResponsiveContainer width="100%" height={250}>
-            <PieChart>
-              <Pie data={marketData} dataKey="value" nameKey="name" outerRadius={80} label>
-                {marketData.map((entry, i) => (
-                  <Cell key={i} fill={COLORS[i % COLORS.length]} />
-                ))}
-              </Pie>
-              <Tooltip />
-            </PieChart>
-          </ResponsiveContainer>
-          <p className="text-sm text-slate-500 mt-2">
-            The global BaaS market is projected to grow from ~$20B in 2023 to ~$80B by 2030.
-          </p>
-        </div>
-
-        <div>
-          <h2 className="font-semibold mb-4">AI Adoption in Finance</h2>
-          <ResponsiveContainer width="100%" height={250}>
-            <BarChart data={aiAdoptionData}>
-              <XAxis dataKey="year" />
-              <YAxis />
-              <Tooltip />
-              <Bar dataKey="adoption" fill="#0b6cf6" />
-            </BarChart>
-          </ResponsiveContainer>
-          <p className="text-sm text-slate-500 mt-2">
-            AI adoption among banks and fintechs is growing rapidly, with expectations of over 80% adoption by 2026.
-          </p>
-        </div>
-      </div>
-
-      <div className="grid md:grid-cols-2 gap-12 mb-8">
-        <div>
-          <AIBankingChart />
-          <p className="text-sm text-slate-500 mt-2">
-            Spengings for AI adoption in banking
-          </p>
-        </div>
-
-        <div>
-          <ProjectedRevenueChart />
-          <p className="text-sm text-slate-500 mt-2">
-            Projected BaaS revenues for a startup providing agentic Banking-as-a-Service
-          </p>
-        </div>
-
-      </div>
-      <div className="mt-12">
-        <h2 className="font-semibold mb-4">Competitive Landscape</h2>
-        <p className="text-slate-600 dark:text-slate-300 max-w-3xl">
-          Current BaaS providers focus on compliance, payments, and basic APIs. None are natively designed for AI-driven,
-          autonomous finance. IKFT is uniquely positioned at the intersection of fintech infrastructure and agentic AI.
+    <div>
+      <section className="py-16 px-6 md:px-12 max-w-6xl mx-auto">
+        <h1 className="text-3xl font-bold mb-6">Investor Overview</h1>
+        <p className="text-lg text-slate-600 dark:text-slate-300 max-w-3xl mb-8">
+          IKFT is building the world’s first agentic Banking-as-a-Service platform, where AI-driven infrastructure can
+          make any bank programmable and adaptive. The market is massive — global BaaS revenues are projected to grow
+          4x+ this decade — and AI adoption in finance is accelerating.
         </p>
-      </div>
-    </section>
+
+        <div className="grid md:grid-cols-2 gap-12 mb-8">
+          <div>
+            <h2 className="font-semibold mb-4">BaaS Market Growth</h2>
+            <ResponsiveContainer width="100%" height={250}>
+              <PieChart>
+                <Pie data={marketData} dataKey="value" nameKey="name" outerRadius={80} label>
+                  {marketData.map((entry, i) => (
+                    <Cell key={i} fill={COLORS[i % COLORS.length]} />
+                  ))}
+                </Pie>
+                <Tooltip />
+              </PieChart>
+            </ResponsiveContainer>
+            <p className="text-sm text-slate-500 mt-2">
+              The global BaaS market is projected to grow from ~$20B in 2023 to ~$80B by 2030.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-semibold mb-4">AI Adoption in Finance</h2>
+            <ResponsiveContainer width="100%" height={250}>
+              <BarChart data={aiAdoptionData}>
+                <XAxis dataKey="year" />
+                <YAxis />
+                <Tooltip />
+                <Bar dataKey="adoption" fill="#0b6cf6" />
+              </BarChart>
+            </ResponsiveContainer>
+            <p className="text-sm text-slate-500 mt-2">
+              AI adoption among banks and fintechs is growing rapidly, with expectations of over 80% adoption by 2026.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-12 mb-8">
+          <div>
+            <AIBankingChart />
+            <p className="text-sm text-slate-500 mt-2">
+              Spengings for AI adoption in banking
+            </p>
+          </div>
+
+          <div>
+            <ProjectedRevenueChart />
+            <p className="text-sm text-slate-500 mt-2">
+              Projected BaaS revenues for a startup providing agentic Banking-as-a-Service
+            </p>
+          </div>
+
+        </div>
+        <div className="mt-12">
+          <h2 className="font-semibold mb-4">Competitive Landscape</h2>
+          <p className="text-slate-600 dark:text-slate-300 max-w-3xl">
+            Current BaaS providers focus on compliance, payments, and basic APIs. None are natively designed for AI-driven,
+            autonomous finance. IKFT is uniquely positioned at the intersection of fintech infrastructure and agentic AI.
+          </p>
+        </div>
+      </section>
+      <section className="py-16 px-6 md:px-12 max-w-6xl mx-auto">
+        <ContactPage />
+      </section>
+    </div>
   )
 }
 
