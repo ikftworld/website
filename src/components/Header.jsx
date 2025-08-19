@@ -17,14 +17,8 @@ export default function Header({ dark, setDark }){
           </div>
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-6 text-gray-700 dark:text-gray-300">
-            <ScrollButton targetId="product">Product</ScrollButton>
+            <ScrollButton targetId="product" setisOpen={setIsOpen}>Product</ScrollButton>
             <ScrollButton targetId="company" setisOpen={setIsOpen}>Company</ScrollButton>
-            <Link
-              to="/contact"
-              className="hover:text-indigo-600 dark:hover:text-indigo-400"
-            >
-              Contact
-            </Link>
             {/* Dark Mode Switch */}
             <button
               onClick={() => setDark(!dark)}
@@ -65,11 +59,10 @@ export default function Header({ dark, setDark }){
               closeMenu={closeMenu}
             >Company</ScrollButton>
             <Link
-              to="/contact"
+              to="/investors"
               className="block text-gray-900 dark:text-gray-100 hover:text-indigo-600 dark:hover:text-indigo-400"
-              onClick={() => setIsOpen(false)}
             >
-              Contact
+              Investors
             </Link>
 
             {/* Dark Mode Switch (Mobile) */}

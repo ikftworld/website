@@ -45,8 +45,7 @@ function Hero(){
           <p className="mt-6 text-lg text-slate-700 max-w-xl">Use IKFT stack with agentic features built in or make your stack AI powered by connecting to Agentic platform.</p>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <a className="inline-flex items-center gap-2 px-5 py-3 rounded-md bg-primary text-white font-medium" href="#get-started">Get started — it's free</a>
-            <a className="inline-flex items-center gap-2 px-5 py-3 rounded-md border border-slate-200 text-sm" href="https://docs.ikft.world" target="_blank">Read docs</a>
+            <a className="inline-flex items-center gap-2 px-5 py-3 rounded-md bg-primary text-white font-medium" href="https://docs.ikft.world" target="_blank">Get started — it's free</a>
           </div>
 
           <div className="mt-8 text-sm text-slate-600">Integrates with accounting, AML, and issuer partners. PCI scoped options available.</div>
@@ -233,7 +232,7 @@ function Footer({ onShowPrivacy }) {
         <div className="flex gap-4 text-sm">
           <button onClick={onShowPrivacy} className="hover:underline">Privacy</button>
           {/* <a href="#terms" className="hover:underline">Terms</a> */}
-          <Link to="/contact" className="hover:underline">Contact</Link>
+          <Link to="/investors" className="hover:underline">Investors</Link>
         </div>
       </div>
     </footer>
