@@ -14,7 +14,7 @@ export default function ScrollButton({ targetId, offset = 0, children, className
     <button
       onClick={() => {
         scrollToSection(targetId, offset)
-        closeMenu()
+        if (closeMenu) closeMenu()
       }}
       className={`hover:text-indigo-600 dark:hover:text-indigo-400 ${className}`}
     >
