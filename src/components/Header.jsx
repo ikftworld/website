@@ -20,6 +20,18 @@ export default function Header({ dark, setDark }){
           <div className="hidden md:flex items-center space-x-6 text-gray-700 dark:text-gray-300">
             <ScrollButton targetId="product">Product</ScrollButton>
             <ScrollButton targetId="company">Company</ScrollButton>
+            <Link
+              to="https://docs.ikft.world"
+              target="_blank"
+              className="block dark:text-gray-100"
+            >
+              <span className="relative">
+                Documentation
+                <span className="absolute -top-2 -right-5 pointer-events-none rounded-full bg-red-600 text-white text-[9px] font-bold px-1 leading-none">
+                  New
+                </span>
+              </span>
+            </Link>
             {/* Dark Mode Switch */}
             <button
               onClick={() => setDark(!dark)}
@@ -59,6 +71,11 @@ export default function Header({ dark, setDark }){
               className="block dark:text-gray-100"
               closeMenu={closeMenu}
             >Company</ScrollButton>
+            <Link
+              to="https://docs.ikft.com"
+              target="_blank"
+              className="block dark:text-gray-100"
+            >Documentation</Link>
             <Link
               to="/investors"
               className="block text-gray-900 dark:text-gray-100 hover:text-indigo-600 dark:hover:text-indigo-400"

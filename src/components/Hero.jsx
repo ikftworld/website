@@ -11,7 +11,7 @@ export default function Hero() {
           <p className="mt-6 text-lg text-slate-700 max-w-xl">Use IKFT stack with agentic features built in or make your stack AI powered by connecting to Agentic platform.</p>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <a className="inline-flex items-center gap-2 px-5 py-3 rounded-md bg-primary text-white font-medium" href="https://docs.ikft.world" target="_blank">Get started — it's free</a>
+            <a className="inline-flex items-center gap-2 px-5 py-3 rounded-md bg-primary text-white font-medium" href="https://docs.ikft.world" target="_blank">Documentation</a>
           </div>
 
           <div className="mt-8 text-sm text-slate-600">Integrates with accounting, AML, and issuer partners. PCI scoped options available.</div>
