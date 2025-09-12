@@ -22,3 +22,20 @@ html, body, #root {
     margin-left: 1.5rem;
   }
 }
+
+@keyframes pulse-color {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+    background-color: #0b6cf6; /* primary blue */
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.9;
+    background-color: #7e5aff; /* accent purple */
+  }
+}
+
+.pulse-investors {
+  animation: pulse-color 2s infinite ease-in-out;
+}

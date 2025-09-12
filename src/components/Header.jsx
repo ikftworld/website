@@ -40,7 +40,7 @@ export default function Header({ dark, setDark }){
               {dark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
             </button>
             <Link to="/investors">
-              <button  className="ml-3 px-4 py-2 rounded-md text-white bg-primary">For Investors</button>
+              <button  className="ml-3 px-4 py-2 rounded-md text-white bg-primary pulse-investors">For Investors</button>
             </Link>
           </div>
 
