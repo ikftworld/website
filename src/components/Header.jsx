@@ -72,6 +72,10 @@ export default function Header({ dark, setDark }){
               className="block dark:text-gray-100"
               closeMenu={closeMenu}
             >Company</ScrollButton>
+            <ScrollButton
+              targetId="careers"
+              className="block dark:text-gray-100"
+              closeMenu={closeMenu}>Careers</ScrollButton>
             <Link
               to="https://docs.ikft.com"
               target="_blank"
@@ -79,7 +83,7 @@ export default function Header({ dark, setDark }){
             >Documentation</Link>
             <Link
               to="/investors"
-              className="block text-gray-900 dark:text-gray-100 hover:text-indigo-600 dark:hover:text-indigo-400"
+              className="block dark:text-gray-100"
             >
               Investors
             </Link>
