@@ -20,6 +20,7 @@ export default function Header({ dark, setDark }){
           <div className="hidden md:flex items-center space-x-6 text-gray-700 dark:text-gray-300">
             <ScrollButton targetId="product">Product</ScrollButton>
             <ScrollButton targetId="company">Company</ScrollButton>
+            <ScrollButton targetId="careers" status="New">Careers</ScrollButton>
             <Link
               to="https://docs.ikft.world"
               target="_blank"

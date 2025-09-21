@@ -6,6 +6,7 @@ import Header from './components/Header'
 import Hero from './components/Hero'
 import Features from './components/Features'
 import UseCases from './components/UseCases'
+import Careers from './components/Careers'
 import AboutCompany from './components/AboutCompany'
 import CTABand from './components/CTABand'
 import ConsentBanner from './components/ConsentBanner'
@@ -30,6 +31,7 @@ export default function App() {
         <Features />
         <UseCases />
         <AboutCompany />
+        <Careers />
         <CTABand />
       </main>
       <ConsentBanner />

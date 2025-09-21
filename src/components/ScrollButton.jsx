@@ -9,16 +9,21 @@ import { scrollToSection } from '../utils/scrollToSection'
  * @param {string} children - Button text or JSX
  * @param {string} className - Additional Tailwind classes
  */
-export default function ScrollButton({ targetId, offset = 0, children, className = '', closeMenu }) {
+export default function ScrollButton({ targetId, status = '', offset = 0, children, className = '', closeMenu }) {
   return (
-    <button
-      onClick={() => {
-        scrollToSection(targetId, offset)
-        if (closeMenu) closeMenu()
-      }}
-      className={`hover:text-indigo-600 dark:hover:text-indigo-400 ${className}`}
-    >
-      {children}
-    </button>
+    <span class="relative">
+      <button
+        onClick={() => {
+          scrollToSection(targetId, offset)
+          if (closeMenu) closeMenu()
+        }}
+        className={`hover:text-indigo-600 dark:hover:text-indigo-400 ${className}`}
+      >
+        <span className="absolute -top-2 -right-5 pointer-events-none rounded-full bg-red-600 text-white text-[9px] font-bold px-1 leading-none">
+          {status}
+        </span>
+        {children}
+      </button>
+    </span>
   )
 }
