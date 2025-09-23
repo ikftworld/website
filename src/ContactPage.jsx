@@ -52,7 +52,7 @@ return (
           Investor Relations
         </span>
         <h1 className="mt-4 text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-          Partner with IKFT
+          Invest in IKFT
         </h1>
         <p className="mt-3 max-w-2xl text-slate-600 dark:text-slate-300">
           We’re building agentic Banking-as-a-Service infrastructure that makes any bank programmable.
